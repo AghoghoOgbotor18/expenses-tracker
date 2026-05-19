@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div class="app">
+
+        <div class="left-panel">
+            <h1>
+                Expense Journal
+            </h1>
+            <p class="subtitle">
+                Keep track of your spending in a clean and intentional way.
+            </p>
+            <div class="form-card">
+                <input
+                    type="text"
+                    id="expenseInput"
+                    placeholder="What did you spend on?"
+                >
+                <input
+                    type="number"
+                    id="amountInput"
+                    placeholder="Amount"
+                >
+                <select id="categoryInput">
+                    <option value="">
+                        Select category
+                    </option>
+                    <option value="Food">
+                        Food
+                    </option>
+                    <option value="Transport">
+                        Transport
+                    </option>
+                    <option value="Shopping">
+                        Shopping
+                    </option>
+                    <option value="Bills">
+                        Bills
+                    </option>
+                    <option value="others">
+                        others
+                    </option>
+                </select>
+                <button id="addBtn">
+                    Add Expense
+                </button>
+                <p id="errorText"></p>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="total-card">
+                <p>Total Spending</p>
+                <h2 id="totalText">
+                    &#8358;0
+                </h2>
+
+            </div>
+
+            <ul id="expenseList"></ul>
+
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
