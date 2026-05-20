@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Expense Tracker</title>
 </head>
@@ -15,9 +12,7 @@
 
         <div class="left-panel">
 
-            <h1>
-                Expense Journal
-            </h1>
+            <h1>Expense Journal</h1>
 
             <p class="subtitle">
                 Keep track of your spending in a clean and intentional way.
@@ -43,25 +38,11 @@
                         Select category
                     </option>
 
-                    <option value="Food">
-                        Food
-                    </option>
-
-                    <option value="Transport">
-                        Transport
-                    </option>
-
-                    <option value="Shopping">
-                        Shopping
-                    </option>
-
-                    <option value="Bills">
-                        Bills
-                    </option>
-
-                    <option value="others">
-                        others
-                    </option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="others">others</option>
 
                 </select>
 
@@ -78,16 +59,13 @@
         <div class="right-panel">
 
             <div class="total-card">
-
                 <p>Total Spending</p>
-
-                <h2 id="totalText">
-                    &#8358;0
-                </h2>
-
+                <h2 id="totalText">&#8358;0</h2>
             </div>
 
-            <ul id="expenseList"></ul>
+            <div class="expense-list-wrapper">
+                <ul id="expenseList"></ul>
+            </div>
 
         </div>
 
