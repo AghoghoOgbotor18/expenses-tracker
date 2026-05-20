@@ -187,16 +187,29 @@ button:hover{
     color: white;
 }
 
+.expense-list-wrapper{
+    display: contents;
+}
+
 @media(max-width: 900px){
 
     .app{
         grid-template-columns: 1fr;
+        grid-template-areas: "dashboard" "form" "list";
     }
 
     .left-panel{
         position: static;
+        grid-area: form;
     }
 
+    .right-panel{
+        grid-area: dashboard;
+    }
+
+    #expenseList{
+        grid-area: list;
+    }
 }
 
 @media(max-width: 600px){
