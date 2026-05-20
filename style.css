@@ -195,21 +195,23 @@ button:hover{
 
     .app{
         grid-template-columns: 1fr;
-        grid-template-areas: "dashboard" "form" "list";
     }
 
     .left-panel{
         position: static;
-        grid-area: form;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-card{
+        order: 2;
     }
 
     .right-panel{
-        grid-area: dashboard;
+        order: 1;
+        margin: 25px 0;
     }
 
-    #expenseList{
-        grid-area: list;
-    }
 }
 
 @media(max-width: 600px){
