@@ -187,22 +187,104 @@ button:hover{
     color: white;
 }
 
+#message{
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    background: #111827;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 7px;
+    box-shadow:
+        0px 10px 25px rgba(0,0,0,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease;
+    font-weight: 500;
+    transform: translateX(-50%);
+}
+
+#message.show{
+    opacity: 1;
+}
+
+
+/* TABLET */
+
 @media(max-width: 900px){
 
     .app{
+        display: grid;
+
         grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "left"
+            "total"
+            "list";
+
+        gap: 25px;
     }
 
     .left-panel{
+        grid-area: left;
         position: static;
     }
 
+    .right-panel{
+        display: contents;
+    }
+
+    .total-card{
+        grid-area: total;
+    }
+
+    #expenseList{
+        grid-area: list;
+    }
+
 }
+
+
+/* MOBILE */
 
 @media(max-width: 600px){
 
     body{
         padding: 20px;
+    }
+
+    .app{
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "left"
+            "total"
+            "list";
+
+        gap: 20px;
+    }
+
+    .left-panel{
+        grid-area: left;
+        position: static;
+    }
+
+    .right-panel{
+        display: contents;
+    }
+
+    .total-card{
+        padding: 28px;
+        position: sticky;
+        top: 15px;
+        z-index: 100;
+    }
+
+    #expenseList{
+        grid-area: list;
     }
 
     .left-panel h1{
@@ -224,24 +306,4 @@ button:hover{
         justify-content: space-between;
     }
 
-}
-
-#message{
-    position: fixed;
-    top: 5%;
-    left: 50%;
-    background: #111827;
-    color: white;
-    padding: 14px 20px;
-    border-radius: 7px;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.4s ease;
-    font-weight: 500;
-}
-
-#message.show{
-    opacity: 1;
-    transform: translateY(0);
 }
