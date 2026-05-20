@@ -194,24 +194,26 @@ button:hover{
 @media(max-width: 900px){
 
     .app{
-        grid-template-columns: 1fr;
+        display:flex;
+        flex-direction: column;
     }
 
     .left-panel{
         position: static;
-        display: flex;
-        flex-direction: column;
+        display: content;
     }
 
-    .form-card{
-        order: 2;
+   h1, .subtitle{
+        order: 1;
     }
 
     .right-panel{
-        order: 1;
-        margin: 25px 0;
+        order: 2;
     }
 
+    .form-card{
+        order:2;
+    }
 }
 
 @media(max-width: 600px){
