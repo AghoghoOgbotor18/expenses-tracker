@@ -98,12 +98,16 @@ button:hover{
     gap: 25px;
 }
 
+/* DESKTOP: total card sticks within the right panel */
 .total-card{
     background: linear-gradient(135deg, #f97316, #fb923c);
     padding: 35px;
     border-radius: 35px;
     color: white;
     box-shadow: 0px 12px 30px rgba(249,115,22,0.25);
+    position: sticky;
+    top: 40px;
+    z-index: 10;
 }
 
 .total-card p{
@@ -208,16 +212,53 @@ button:hover{
 
     body{
         padding: 20px;
+        /* make room for the fixed total card */
+        padding-top: 160px;
     }
 
     .left-panel h1{
         font-size: 2.2rem;
+        order: 1;
+    }
+
+    .subtitle{
+        order: 2;
+    }
+
+    /* Total card fixed to the top on mobile */
+    .total-card{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0 0 28px 28px;
+        padding: 20px 20px 18px;
+        z-index: 1000;
     }
 
     .total-card h2{
         font-size: 2.5rem;
     }
 
+    /* Re-order mobile layout: h1 > subtitle > (total fixed) > form > list */
+    .app{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-panel{
+        position: static; /* override sticky so it scrolls normally on mobile */
+        order: 1;
+    }
+
+    /* form-card inside left-panel, so left-panel comes first,
+       right-panel (which holds the list) comes after */
+    .right-panel{
+        order: 2;
+    }
+
+    /* Hide the total card from normal flow on mobile
+       (it's fixed, so it doesn't affect layout anyway) */
     .expense-content{
         flex-direction: column;
         align-items: flex-start;
@@ -248,4 +289,5 @@ button:hover{
 
 #message.show{
     opacity: 1;
+    z-index: 3000;
 }

@@ -17,18 +17,7 @@ let expenses : Expense[] = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     loadExpense();
-})
-
-//alert when an item is added or deleted
-function showMessage(text: string): void{
-    message.textContent = text;
-    message.classList.add("show");
-
-    setTimeout(() => {
-        message.classList.remove("show");
-    }, 2000);
-
-}
+});
 
 addBtn.addEventListener("click", addExpense);
 
@@ -153,4 +142,15 @@ function clearInputs(): void{
     expenseInput.value = "";
     amountInput.value = "";
     categoryInput.value = "";
+}
+
+//alert when an item is added or deleted
+function showMessage(text: string): void{
+    message.textContent = text;
+    message.classList.add("show");
+
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 2000);
+
 }
